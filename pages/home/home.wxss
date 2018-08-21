@@ -1,0 +1,59 @@
+/* pages/home/home.wxss */
+
+.swiper {
+  height: 320rpx;
+  width: 100%;
+}
+
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.item {
+  width: 80%;
+  height: 180rpx;
+  background-color: #f4a460;
+  border-radius: 15rpx;
+  margin-left: 10%;
+}
+
+.bookImg {
+  width: 130rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+  margin-left: 90rpx;
+}
+
+.item {
+  margin: 40rpx auto;
+}
+
+.texts {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: -140rpx;
+  margin-left: 300rpx;
+}
+
+.title {
+  font-size: 45rpx;
+}
+.content{
+  margin-top: 15rpx;
+}
+.content :active{
+  transform: scale(0.95)
+}
+.align{
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.textBottom{
+  position: relative;
+  font-size: 35rpx;
+  text-align: center;
+  align-content: center;
+}

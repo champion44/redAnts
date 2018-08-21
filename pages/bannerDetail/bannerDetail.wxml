@@ -1,0 +1,3 @@
+<view class='boss'>
+<image class='pic' src='{{innerUrl}}' mode='widthFix'></image>
+</view>

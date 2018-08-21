@@ -1,0 +1,85 @@
+/* pages/moneyRecord/moneyRecord.wxss */
+
+.box {
+  width: 100%;
+}
+
+.money {
+  width: 750rpx;
+  height: 650rpx;
+}
+.clareMoney{
+  margin-top: 20rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  background-color: #FC5759;
+  color: white;
+}
+.info{
+  font-size: 30rpx;
+  color: lightgray;
+  position: absolute;
+  top: 95%;
+left: 20%;
+}
+.texts {
+  position: absolute;
+  top: 35%;
+  display: flex;
+  left: 40%;
+  flex-direction: column;
+}
+
+.middle {
+  border-bottom: 1rpx lightgrey solid;
+  margin: 5rpx 10rpx;
+  font-size: 30rpx;
+  padding: 10rpx 10rpx;
+}
+
+.circle {
+  width: 90rpx;
+  height: 90rpx;
+  background-color: #fc5759;
+  border-radius: 20rpx;
+  margin-right: 30rpx;
+}
+
+.word {
+  color: white;
+  position: absolute;
+  margin: 25rpx 15rpx;
+  font-size: 30rpx;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.moneyList {
+  margin: 20rpx;
+}
+
+.moneyItem {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+
+.moneyTitle {
+  font-size: 35rpx;
+}
+
+.recordTime {
+  font-size: 30rpx;
+  margin-top: 5rpx;
+}
+
+.moneyAmount {
+  position: absolute;
+  left: 80%;
+  font-size: 35rpx;
+  margin-top: 15rpx;
+}

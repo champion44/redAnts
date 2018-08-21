@@ -1,0 +1,26 @@
+[
+    {
+        "cname": "物理化学",
+        "imgPath": "http://sinacloud.net/redant-4you/img/che.png"
+    },
+    {
+        "cname": "英语",
+        "imgPath": "http://sinacloud.net/redant-4you/img/eng.png"
+    },
+    {
+        "cname": "地质学",
+        "imgPath": "http://sinacloud.net/redant-4you/img/geo.png"
+    },
+    {
+        "cname": "物理学（上）",
+        "imgPath": "http://sinacloud.net/redant-4you/img/phy.png"
+    },
+    {
+        "cname": "政治经济学",
+        "imgPath": "http://sinacloud.net/redant-4you/img/pol.png"
+    },
+    {
+        "cname": "高数",
+        "imgPath": "http://sinacloud.net/redant-4you/img/mat.png"
+    }
+]

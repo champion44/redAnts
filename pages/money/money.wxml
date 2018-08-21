@@ -1,0 +1,47 @@
+<view class="fenxiang-box" hidden='{{!flag}}'>
+<view class="box">
+<view>
+<image class='money' mode='scaleToFill' src='../../dist/image/money.png'> </image>
+<view class='texts'>
+<text>我的红包</text>
+<text style='font-weight: bold;font-size: 50rpx;'>¥{{money}}</text>
+</view>
+</view>
+<view class='middle'>
+<text>收到来自红小蚁的红包</text>
+</view>
+<view class='moneyItem' wx:if='{{moneyType=="login"}}'>
+<view class='circle'><text class='word'>登录</text></view>
+<view class='column'>
+<text class='moneyTitle'>登录红包</text>
+</view>
+<text class='moneyAmount'>{{money}}元</text>
+</view>
+<view class='moneyItem' wx:if='{{moneyType=="haveServ"}}'>
+<view class='circle'><text class='word'>谢谢</text></view>
+<view class='column'>
+<text class='moneyTitle'>您已领过红包</text>
+</view>
+<text class='moneyAmount'>0.00元</text>
+</view>
+<view class='moneyItem' wx:if='{{moneyType=="survey"}}'>
+<view class='circle'><text class='word'>答题</text></view>
+<view class='column'>
+<text class='moneyTitle'>答题红包</text>
+</view>
+<text class='moneyAmount'>{{money}}元</text>
+</view>
+</view>
+<text class='infoInMoney'>您可至个人->红包记录操作查看</text>
+<view class='btns'>
+<button bindtap='nav' id='1'>访问首页</button>
+<button bindtap='nav' id='2'>红包记录</button></view>
+</view>
+
+<view class="modal-box" hidden="{{flag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content">
+      <image bindtap="hide" src="../../dist/image/tear.png" class="fenxiang"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class='mainBox'>
+<view class='topAd'>
+    <swiper indicator-active-color="rgba(248,151,68,1)" class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+      <block wx:for="{{adPic}}" wx:key="this" wx:for-index="index">
+        <swiper-item>
+          <image src="{{item.adPicUrl}}" id='{{item.innerPics}}' bindtap='bannerDetail' class="slide-image" mode="scaleToFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='content' wx:for='{{homeTexts}}' wx:key="this">
+  <view class='item' bindtap='bindFun' id="{{index}}">
+  <image class='bookImg' src='{{item.iconPic}}'></image>
+  <view class='texts'>
+    <text class='title'>{{item.title}}</text>
+    <text class='content'>{{item.content}}</text>
+  </view>
+  </view>
+  </view>
+  <view class='align' bindtap='copy'>
+  <text class='textBottom'>欢迎加入红小蚁资料分享QQ群<text selectable='true' style='color:#1C86EE'> 628257900</text></text>
+  </view>
+</view>

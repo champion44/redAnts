@@ -1,0 +1,53 @@
+{
+  "pages": [    
+    "pages/home/home",
+    "pages/servey/servey",
+    "pages/bannerDetail/bannerDetail",
+    "pages/loveSearch/loveSearch",
+    "pages/jiugongge4/jiugongge4",
+    "pages/login/login",
+    "pages/moneyRecord/moneyRecord",
+    "pages/my/my",
+    "pages/money/money",
+    "pages/compusory/compusory",
+    "pages/myGrid/myGrid",
+    "pages/index/index",
+    "pages/history/history",
+    "pages/skin/skin",
+    "pages/search/search",
+    "pages/courseList/courseList"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学习资料",
+    "navigationBarTextStyle": "gray",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#686868",
+    "selectedColor": "#F4A460",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "dist/image/tabBar/home.png",
+        "selectedIconPath": "dist/image/tabBar/home-select.png",
+        "text": "爱学习"
+      },
+      {
+        "pagePath": "pages/servey/servey",
+        "iconPath": "dist/image/tabBar/servey.png",
+        "selectedIconPath": "dist/image/tabBar/servey-select.png",
+        "text": "答问卷"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "dist/image/tabBar/my.png",
+        "selectedIconPath": "dist/image/tabBar/my-select.png",
+        "text": "个人"
+      }
+    ]
+  }
+}

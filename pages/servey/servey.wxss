@@ -1,0 +1,149 @@
+/* pages/servey/servey.wxss */
+.boss{
+  width: 750rpx;
+  align-items: center;
+}
+.top {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.title {
+  padding: 5rpx 20rpx;
+  background-color: #f4a460;
+  color: white;
+  border-radius: 10rpx;
+  font-size: 35rpx;
+}
+
+.choise {
+  display: flex;
+  line-height: 100rpx;
+  font-size: 35rpx;
+  border-radius: 15rpx;
+}
+
+.choise:link {
+  background-color: #f4a460;
+  color: white;
+}
+
+.choise:visited {
+  background-color: #f4a460;
+  color: white;
+}
+
+.choise:hover {
+  background-color: #f4a460;
+  color: white;
+}
+
+.choise:active {
+  background-color: #f4a460;
+  color: white;
+}
+
+.content {
+  margin: auto 70rpx;
+  font-size: 35rpx;
+}
+
+.welcomeServey {
+  width: 100%;
+}
+
+.font {
+  width: 60%;
+  margin-left: 20%;
+  height: 150rpx;
+  padding-top: 20rpx;
+}
+
+.progressText {
+  color: white;
+  position: absolute;
+  top: 10rpx;
+  left: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.danxuan {
+  top: 10rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 40rpx auto;
+}
+
+.juli {
+  position: absolute;
+  padding-top: 50rpx;
+}
+
+.beginServey {
+  background-color: rgb(255, 29, 5);
+  color: white;
+  width: 400rpx;
+  margin-top: 30rpx;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url(data:font/truetype;charset=utf-8;base64,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) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiantou1-copy-copy-copy:before {
+  content: "\e7a7";
+}
+
+.icon-youjiantou:before {
+  content: "\e603";
+}
+
+.btnRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 85%;
+  color: orange;
+}
+
+.btnRow text {
+  font-size: 100rpx;
+}
+
+.left {
+  position: relative;
+  left: 5%;
+}
+
+.right {
+  position: relative;
+  left: 70%;
+}

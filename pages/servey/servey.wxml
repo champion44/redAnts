@@ -1,0 +1,26 @@
+<!--pages/servey/servey.wxml-->
+<view class='boss' wx:if='{{fresher}}'>
+<image class='welcomeServey' mode='widthFix' src='../../dist/image/servey.png'></image>
+<image class='font' mode='scaleToFill' src='../../dist/image/font.png' ></image>
+<button disabled='{{!noAnswered}}'  bindtap='beginServey' class='beginServey'>{{btnInfo}}</button>
+</view>
+<view class='box' wx:else>
+<progress class='progress' activeColor='#F4A460' stroke-width='30' percent="{{percent}}" active active-mode='forwards'/>
+<text class='danxuan'>【单选题】</text>
+<view wx:for='{{questionContent}}' wx:key="this"  wx:for-index="idx">
+<view wx:if="{{idx==now}}">
+<text class='top' style='color:#F4A460;'><text class='title'> {{item.content}} </text> </text>
+<text class='progressText'>{{idx+1}}/{{questionContent.length}}</text>
+<view bindtap='answerClicked' id='{{idx}}' class='content' wx:for='{{item.answers}}' wx:key="this" wx:for-index="idx2">
+<text wx:if='{{idx2==0}}' class='choise' id='A'>Ⓐ {{item}}</text>
+<text wx:if='{{idx2==1}}' class='choise' id='B'>Ⓑ {{item}}</text>
+<text wx:if='{{idx2==2}}' class='choise' id='C'>Ⓒ {{item}}</text>
+<text wx:if='{{idx2==3}}' class='choise' id='D'>Ⓓ {{item}}</text>
+</view><!--answerClicked-->
+<text class='content juli'>您第<text style='color:orange;font-weight:bold;'>{{now+1}}</text>题的选择是: <text style='color:orange;font-weight:bold;'>{{answers[now]}}</text></text>
+</view><!--if-->
+</view><!--第一层for-->
+<view class='btnRow' bindtap='arrow'>
+<text class="left iconfont icon-jiantou1-copy-copy-copy" id='0'></text>
+<text class="right iconfont icon-youjiantou" id='1'></text></view>
+</view><!--box-->

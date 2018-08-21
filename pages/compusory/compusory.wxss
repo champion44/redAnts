@@ -1,0 +1,32 @@
+/* pages/compusory/compusory.wxss */
+.box{
+  margin-top: 50rpx;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  margin-bottom: 30rpx;
+}
+
+.circle {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: rgb(24, 151, 224);
+  border-radius: 200rpx;
+}
+
+.word {
+  color: white;
+  position: relative;
+  top: 15rpx;
+  left: 30rpx;
+  font-size: 60rpx;
+}
+
+.subjectName {
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+  font-size: 50rpx;
+  font-family: "Times New Roman", Georgia, Serif;
+}

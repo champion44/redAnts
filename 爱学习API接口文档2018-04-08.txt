@@ -1,0 +1,326 @@
+# API 
+Author:champion
+服务器:[图片]https://antcar.net.cn/
+###-登陆页面仅对于首次登陆用户 后台查询接口 查看用户是否存在
+
+```
+[图片]https://antcar.net.cn/user/isFresher
+```
+GET /user/isFresher
+```
+
+参数
+
+```
+openid:"061bUWcE01x16e2RbTbE0jfMcE0bUWcX"
+
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+    "isFresher":"true"
+    }
+}
+```
+
+###-登陆信息校验
+
+```
+GET /user/validate
+```
+
+参数
+
+```
+stuName:"zhangsan"
+stuNum:"201320302120"
+
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+    "validate":"false"//校验失败 返回code仍为0 msg仍为成功
+    }
+}
+//其余由于网络情况等访问不成功 code为1 msg为错误日志 没有data
+```
+
+
+###-用户信息持久化
+
+```
+GET /user/userInfoPersistence
+```
+
+参数
+
+```参数依次为姓名 电话 学号 openid （可选:微信名 微信头像 微信性别）
+name: "张三" 
+phone: "18868822111"
+stuNum: "201412010320"
+openid: "ew3euwhd7sjw9diwkq" //用户的在此小程序的唯一标示
+
+
+```
+
+返回
+
+```
+{
+  "code": 0,
+  "msg": "信息存储失败信息",//用户端弹窗提示信息
+  "data": {
+      "userInfoPersistence": "false" //信息存储失败
+  }
+}
+```
+
+###-微信红包 对传参用户进行红包的最终且唯一的一次提现
+
+```
+GET /wechat/onceMoneyDistribute
+```
+
+参数openid 参数类型 String
+
+```
+openid: "18eu2jwk2kse3r42e2e"
+
+```
+
+返回
+
+```
+{
+  "code": 0,
+  "msg": "发送失败的微信端msg",//用于小程序端提示信息
+   "data": {
+      "distributeStatus": "false" //红包发送失败
+  }
+}
+```
+
+###-获取问卷
+
+```
+GET /survey/getServeyQuestions
+```
+
+参数
+
+```
+无
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+          "serveyList": [
+            {
+             "serveyId":"1",//问卷编号
+                "serveyTitle": "问卷一",//问卷后台管理名字
+                "questionContent":[
+                // 9题
+                [],[],[],[],[],[],[],[],[]
+                ]
+            },{
+              "serveyId":"2",
+                "serveyTitle": "问卷二",
+                "questionContent":[
+                 [],[],[],[],[],[],[],[],[
+                  "questionTitle":""//题目
+                  "questionchoices":{//4选项
+                    "","","",""
+                  }
+                 ]
+                ]
+            }
+        ]
+    }
+}
+``
+
+###-问卷答案持久化 将此openid用户的问卷答案入库
+```
+GET /wechat/userServeyPersistence
+
+```
+
+参数
+
+```
+openid: "18eu2jwk2kse3r42e2e"
+serveyId: 1//第一套问卷
+answers:”ABCCBAACD”
+
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+“userServeyPersistence”:”true”
+        }
+}
+
+
+###-获取，记录红包 虚拟数字 由/wechat/onceMoneyDistribute统一体现
+
+```更新于 2018-04-12 14:51:08 建议记录系统当前时间 用于/wechat/getMoneyList返回
+GET /wechat/getMoney
+```
+
+参数
+
+```
+openid: “18eu2jwk2kse3r42e2e”
+moneyType:”login”   //2018-04-12 11:18:45 新增参数 moneyType类型login share
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+      "amount":0.12//0.5的随机数 
+     //确定需要返回 用于当时红包发放时显示红包金额
+    }
+}
+```
+
+###-获取用户红包获取记录 每次调用GET /wechat/getMoney时数据库新增一条数据 用于该接口返回记录集合
+
+```
+GET /wechat/getMoneyList
+```
+
+参数
+
+```
+openid: "18eu2jwk2kse3r42e2e"
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+	“totalMoney”:0.85,
+	“moneyList”:[{
+               “moneyType”:”login”,  //红包类型
+               “moneyAmount”:0.21  //单个红包金额
+	        “recordTime”:”2018-04-12”//更新于 2018-04-12 14:51:08   字段可以为时间戳 也可以为格式化好的时间信息
+                            },{
+               “moneyType”:”survey”, 
+               “moneyAmount”:0.64 
+		“recordTime”:”2018-04-12”
+                              }]      
+                 }
+}
+```
+
+###-记录用户的分享次数 用于抽奖限制
+
+```
+GET /user/shareTimes
+```
+
+参数
+
+```
+无   //更改前
+openid:”sdfefsdfsdfsdfesfd” //更改后
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+      "times":11// 处理请求后的分享次数 无参请求此接口 数据库10次 加1 返回11
+    }
+}
+```
+
+###-抽奖 奖品信息json
+
+```
+GET /awardItem/list
+```
+
+参数
+
+```
+无
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+      "awardItems":{
+        [
+        "awardId":"1",
+        "awardImg":"图片URL",
+        "awardName":"充电宝"
+        ],[],[],[]
+      }
+    }
+}
+```
+
+###-记录用户抽奖信息 
+
+```
+GET /user/userAwardPersistence
+```
+
+参数
+
+```
+awardId:1
+openid:"sdfsfwesdfwefsfewf"
+```
+
+返回
+
+```
+{
+    "code": 0,
+    "msg": "成功",
+    "data": {
+      "userAwardPersistence":"true"
+    }
+}
+```
+—未完结 2018-04-08 12:51:30—
+—更新于 2018-04-09 09:13:24—
+—更新于 2018-04-11 22:36:47—
+—更新于 2018-04-12 11:18:45—
+—更新于 2018-04-12 14:51:08—

@@ -1,0 +1,67 @@
+@import '../../pages/moneyRecord/moneyRecord.wxss';
+
+.fenxiang-box{
+  width: 750rpx;
+  height: 100%;
+}
+.fenxiang-btn{
+  width: 750rpx;
+  height: 1230rpx;
+}
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+
+.modal-body{
+  position:relative;
+  }
+
+.modal-content{
+  /* width: 60%; */
+  margin:40% auto;
+  overflow: hidden;
+  border-radius: 10rpx;
+  }
+
+.modal-content{
+  width: 80%;
+  height:350px; 
+}
+.modal-content .fenxiang{
+  width: 100%;
+  height: 90%;
+}
+.moneyItem{
+   display: flex;
+  flex-direction: row;
+  padding:15rpx;
+  border-bottom: 1rpx solid lightgray;
+}
+.moneyTitle{
+  padding-top: 20rpx;
+}
+.moneyAmount{
+  padding-top: 20rpx;
+}
+.infoInMoney{
+  position: absolute;
+  margin-left: 18%;
+top: 94%;
+  text-align: center;
+  font-size: 35rpx;
+  color: grey;
+}
+.btns{
+  margin-top: 150rpx;
+  display: flex;
+  flex-direction: row;
+}
+.btns button{
+  background-color: #FC5759;
+  color: white;
+}

@@ -1,0 +1,9 @@
+<!--pages/compusory/compusory.wxml-->
+<view class='box'>
+<view class='wrapper' wx:for='{{compulsoryList}}' wx:key='key'>
+<view class='item'>
+<view class='circle'><text class='word'>{{item.title}}</text></view>
+<text class='subjectName'>{{item.subjectName}}</text>
+</view>
+</view>
+</view>

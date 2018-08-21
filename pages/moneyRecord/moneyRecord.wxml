@@ -1,0 +1,32 @@
+<view class="box">
+<view>
+<image class='money' mode='scaleToFill' src='../../dist/image/money.png'> </image>
+<view class='texts'>
+<text>我的红包</text>
+<text style='font-weight: bold;font-size: 50rpx;'>¥{{totalMoney}}</text>
+<button class='clareMoney' bindtap='clareMoney'>提现</button>
+</view>
+</view>
+<view class='middle'>
+<text wx:if='{{moneyList.length>0}}'>{{moneyList.length}}个红包共{{totalMoney}}元</text>
+</view>
+<view class='moneyList' wx:for='{{moneyList}}' wx:key='this'>
+<view class='moneyItem' wx:if='{{item.type=="FirstLogin"}}'>
+<view class='circle'><text class='word'>登录</text></view>
+<view class='column'>
+<text class='moneyTitle'>登录红包</text>
+<text class='recordTime'>{{item.recordTime}}</text>
+</view>
+<text class='moneyAmount'>{{item.amount}}元</text>
+</view>
+<view class='moneyItem' wx:if='{{item.type=="Questionnaire"}}'>
+<view class='circle'><text class='word'>答题</text></view>
+<view class='column'>
+<text class='moneyTitle'>答题红包</text>
+<text class='recordTime'>{{item.recordTime}}</text>
+</view>
+<text class='moneyAmount'>{{item.amount}}元</text>
+</view>
+</view><!--moneyList-->
+<text class='info'>提现到微信零钱 1个工作日内到账</text>
+</view>

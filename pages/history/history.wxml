@@ -1,0 +1,60 @@
+<import src="../../comm/nullTip/nullTip.wxml" />
+
+<view class="record" wx:if="{{historyShow}}">
+    <block wx:if="{{sign}}">
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </block>
+    <block wx:else>
+      <view class="subjectList">
+        <block wx:for="{{history}}" wx:key="history" class="subject">
+          <view class="subjectItem">
+            <view class="tapBind" id="{{item.wordDir}}" bindtap="openWord">
+              <image wx:if="{{item.fileType=='ppt'}}" class="wordPng" src="../../dist/image/docRelated/ppt.png"></image>
+              <image wx:if="{{item.fileType=='pdf'}}" class="wordPng" src="../../dist/image/docRelated/pdf.png"></image>
+              <image wx:if="{{item.fileType=='doc'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+              <image wx:if="{{item.fileType=='docx'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+              <image wx:if="{{item.fileType=='txt'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+              <text class="titleTextInSaved">{{item.wordTitle}}</text>
+            </view>
+            <image bindtap="saveToLocal" data-pack="{{item}}" class="downloadInMy rotate" src="../../dist/image/docRelated/download.png"></image>
+            <button class="shareBtnInMy" plain="true" open-type="share" bindshare="onShareAppMessage">
+</button>
+            <image id="{{item.wordDir}}" class="downloadPngInMy rotate" src="../../dist/image/docRelated/share.png"></image>
+            <image id="{{item.wordTitle}}" class="downloadPngInMy rotate" src="../../dist/image/docRelated/delete.png" bindtap="delHistory"></image>
+          </view>
+          <!--subjectItem-->
+        </block>
+      </view>
+      <!--subjectList-->
+    </block>
+  </view>
+
+  <view class="record stored" wx:if="{{storedShow}}">
+    <block wx:if="{{sign}}">
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </block>
+    <block wx:else>
+      <block wx:for="{{stored}}" wx:key="stored" class="subject">
+        <view class="subjectItem">
+          <view class="tapBind" id="{{item.wordDir}}" bindtap="openStored">
+            <image wx:if="{{item.fileType=='ppt'}}" class="wordPng" src="../../dist/image/docRelated/ppt.png"></image>
+            <image wx:if="{{item.fileType=='pdf'}}" class="wordPng" src="../../dist/image/docRelated/pdf.png"></image>
+            <image wx:if="{{item.fileType=='doc'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+            <image wx:if="{{item.fileType=='docx'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+            <image wx:if="{{item.fileType=='txt'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image>
+            <view class="titleTimeSize">
+              <text  class="titleTextInSaved">{{item.wordTitle}}</text>
+              <view class="timeAndSize">
+                <text class="wordTime wordTitle">{{item.time}}</text>
+                <text class="wordSize wordTitle">{{item.size}}KB</text>
+              </view>
+              <!--TimeSize-->
+            </view>
+            <!--titleTimeSize-->
+          </view>
+          <image id="{{item.wordTitle}},{{item.wordDir}}" bindtap="delSaved" class="del" src="../../dist/image/docRelated/del.png"></image>
+        </view>
+        <!--subjectItem-->
+      </block>
+    </block>
+  </view>

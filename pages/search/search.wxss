@@ -1,0 +1,164 @@
+
+.input {
+  size: 240px;
+  display: inline-flex;
+  margin: 10px;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+.head{
+  background-color: #F4A460;
+}
+.search{
+  background-color: #f2f2f2;
+  height: 75rpx;
+  width: 90%;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: row;
+  margin-bottom: 40rpx;
+}
+.dynamic{
+  color: #F4A460;
+  position: absolute;
+  left: 10%;
+  top: 8%;
+  font-size: 15px;
+}
+
+.search input{
+  height: 100%;
+  width: 600rpx;
+  margin-left: 20px;
+  font-size: 28rpx;
+}
+.search-img{
+  margin: auto 0 auto 20rpx;
+}
+.searchItem-img{
+  margin: auto auto auto 30px;
+}
+
+.xx-img{
+  height: 45rpx;
+  width: 45rpx;
+    margin: auto 10px auto 20rpx;
+}
+.placeholder{
+  font-size: 18px;
+  margin-left: 20rpx;
+  color: #d1d1d1;
+}
+.tips{
+  color: #d1d1d1;
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  font-size: 15px;
+}
+.recommend{
+  width: 100%;
+}
+.recommendText{
+position: absolute;
+font-size: 13px;
+top: 11%;
+margin-left: 1px;
+width: 100%;
+border-top: 1px solid lightgrey;
+visibility: hidden;
+}
+.recommendText2{
+position: absolute;
+font-size: 13px;
+top: 11%;
+margin-left: 1px;
+padding-left: 10px;
+width: 100%;
+color: gray;
+border-top: 1px solid lightgrey;
+height: 50px;
+line-height:50px;
+}
+
+.off {
+  width: 150px;
+  float: left;
+  color: #F4A460;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+  background-color: white;
+}
+
+.on {
+  width: 150px;
+  float: left;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+  background-color: #F4A460;
+}
+.recommInputs{
+ padding-top: 60px;
+ display: flex;
+ flex-direction: row;
+ }
+ .recommInputs2{
+    display: flex;
+ flex-direction: row;
+ }
+
+.recommInput{
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  margin: 7px;
+  height: 30px;
+}
+.recommendItem{
+font-size: 13px;
+color: gray;
+line-height: 30px;
+}
+.scroll {
+  width: 100%;
+  margin-top:15px;
+  position: absolute;
+  height: 50%;
+  top: 42%;
+}
+.subject {
+  margin-top: 4px;
+  
+  line-height: 30px;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: 18px;
+  border-bottom: 1px solid lightgrey;
+  color: gray;
+}
+.subjectInAll{
+ margin-top: 4px;
+  line-height: 30px;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: 18px;
+  border-bottom: 1px solid lightgrey;
+  color: gray;
+  text-align: center;
+}
+
+.pInHistory {
+  position: relative;
+  margin-left: 10%;
+}
+.waiting-img{
+  position: relative;
+  left: 3%;
+  top: 3%;
+}
+.del-img{
+   position: relative;
+ float: right;
+margin-top: 9px;
+ right: 3%;
+}

@@ -1,0 +1,20 @@
+<view class='mainBox'>
+<view class='topAd'>
+    <swiper indicator-active-color="rgba(248,151,68,1)" class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+      <block wx:for="{{adPic}}" wx:key="this" wx:for-index="index">
+        <swiper-item>
+          <image src="{{item.adPicUrl}}" class="slide-image" mode="scaleToFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+   <view class="grids">
+        <block wx:for="{{gridList}}" wx:for-item="gridItem" wx:for-index="gridIndex" wx:key="grid">
+            <view class="grid" bindtap="viewGridDetail" data-url="{{gridItem.enName}}">
+                <view><image src='{{gridItem.iconPic}}' class='iconPic'></image></view>
+                <view class="grid-title">{{gridItem.zhName}}</view>
+            </view>
+        </block>
+    </view>
+</view>

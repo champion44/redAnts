@@ -1,0 +1,26 @@
+<!--index.wxml-->
+
+<view class="container">
+  <view class="mainPic">
+    <image class="logo" src="../../dist/image/logo.png" background-size="cover"></image>
+  </view>
+  <view class="searchUnion">
+    <image class="search-logo" src="../../dist/image/logo.png"></image>
+    <icon class="search-img" color="gray" type="search" size="17" />
+    <button bindtap="search" class="input"> 搜索文档</button>
+  </view>
+  <!--放大镜和input框-->
+</view>
+<!-- container的view-->
+<view class="liner"> --常用推荐--</view>
+
+<block wx:for="{{subjects}}" wx:key="this"  class="subject">
+  <view class="template">
+    <view class="innerTemplate">
+      <image src="{{item.imgPath}}" class="subjectImg" id="{{item.cname}}" data-pack="{{item.subjectPack}}" bindtap="goToWordList">
+      </image>
+      <p class="subjectP">{{item.cname}}</p>
+    </view>
+  </view>
+</block>
+<text style='margin-left:270rpx;color: lightgray; font-size: 30rpx;padding-top:50rpx;'>文档来源于网络</text>

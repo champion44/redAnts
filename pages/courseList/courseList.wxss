@@ -1,0 +1,75 @@
+/* pages/courseList/courseList.wxss */
+
+.title {
+  text-align: center;
+}
+
+.cName {
+  text-align: center;
+  color: #476192;
+}
+
+.subjectItem {
+  padding-top: 20px;
+  display: flex;
+}
+
+.tapBind {
+  display: flex;
+}
+
+.wordPng {
+  width: 70px;
+  height: 70px;
+}
+
+.area {
+  position: absolute;
+  width: 30%;
+  height: 75px;
+  left: 30%;
+  opacity: 0;
+}
+
+.titleText {
+  color: rgb(71, 97, 146);
+  height: 80px;
+  width: 120px;
+  font-size: 14px;
+}
+
+.textarea {
+  color: rgb(71, 97, 146);
+  width: 120px;
+  height: 75px;
+  font-size: 14px;
+  position: relative;
+}
+
+.shareBtn {
+  position: absolute;
+  left: 82%;
+  height: 50px;
+  width: 10%;
+  opacity: 0;
+}
+
+.wordTitle:active {
+  color: #63b8ff;
+}
+
+.downloadPng {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+image:active {
+  transform: scale(1.1);
+}
+
+.rotate:active {
+  transform: rotate(45deg);
+}

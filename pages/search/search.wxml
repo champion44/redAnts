@@ -1,0 +1,53 @@
+<view class="container">
+<view class="search">
+<icon wx:if="{{show}}" class="search-img" color="lightgray" type="search" size="17" color="#405f80"/>
+<input auto-focus="true" value="{{value}}" type="text"  placeholder-class="placeholder"  placeholder="{{input}}" bindinput="search"/>
+<image  src="../../dist/image/xx.png" class="xx-img" bindtap="change"></image>
+</view>
+<view class="tips" wx:if="{{show}}">点击‘X’以重新搜索</view>
+<view class="dynamic" wx:if="{{isShow}}">搜索“{{dynamic}}”</view>
+<!--热门推荐 -->
+<view class="recommend">
+<!--占位  -->
+<p class="recommendText">热门推荐</p>
+<p class="recommendText2">热门推荐</p>
+<!--椭圆推荐  -->
+<view class="recommInputs" >
+<view wx:for="{{recommend}}" wx:key="*this" >
+<view wx:if="{{index<4}}" class="recommInput">
+<text id="{{item.cname}}" data-pack="{{item.subjectPack}}" bindtap="goToWordList"  class="recommendItem" >{{item.cname}}</text>
+ </view> 
+</view>
+</view>
+</view>
+<view class="recommInputs2" >
+<view wx:for="{{recommend}}" wx:key="*this" >
+<view wx:if="{{index>4&&index<9}}" class="recommInput">
+<text id="{{item.cname}}" data-pack="{{item.subjectPack}}" bindtap="goToWordList"  class="recommendItem" >{{item.cname}}</text>
+ </view>
+</view>
+</view>
+<!--这是所有科目  -->
+<view class="selector">
+<button class="{{sa}}" bindtap="showAll">全部学科</button>
+<button class="{{sh}}" bindtap="showSearchHistory">搜索历史</button>
+</view> 
+<scroll-view wx:if="{{showResults}}" class="scroll" scroll-y="true">
+<view  wx:for="{{subjects}}" wx:key="*this"  >
+<view class="subjectInAll" id="{{item.cname}}" data-pack="{{item.subjectPack}}" bindtap="goToWordList">
+<!-- <icon wx:if="{{isShow}}" class="searchItem-img"  color="lightgray" type="search" size="18" /> -->
+<p class="cnameP">{{item.cname}}</p>
+</view>
+</view>
+</scroll-view>
+ <!--这是搜索历史  -->
+<scroll-view wx:if="{{showHistory}}" class="scroll" scroll-y="true">
+<view  wx:for="{{searchHistory}}" wx:key="*this"  >
+<view  class="subject" >
+<icon  class="waiting-img"  color="lightgray" type="waiting" size="14" />
+<p class="pInHistory" id="{{item.cname}}" data-pack="{{item.subjectPack}}" bindtap="goToWordList">{{item.cname}}</p>
+<icon  class="del-img" id="{{item.cname}}" color="lightgray" type="cancel" size="17" bindtap="delSearchHistory"/>
+</view>
+</view>
+</scroll-view> 
+</view><!--container-->

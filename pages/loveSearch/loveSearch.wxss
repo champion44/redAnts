@@ -1,0 +1,10 @@
+/* pages/loveSearch/loveSearch.wxss */
+@import '../../pages/myGrid/myGrid.wxss';
+@import '../../pages/home/home.wxss';
+.iconPic{
+  width: 100rpx;
+  height:100rpx;
+}
+.grid-title{
+  font-size: 30rpx;
+}

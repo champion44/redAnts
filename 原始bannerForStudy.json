@@ -1,0 +1,7 @@
+[{ 
+	"picName":"艾特简介","adPicUrl": "https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/艾特驾校.jpeg" ,
+"innerPics":["https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/艾特简介.jpg"]
+},{"picName":"小程序使用指南", "adPicUrl": "https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/程序指南.jpeg",
+"innerPics":["https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/小程序使用指南.jpg"] 
+}, { "picName":"折扣卡使用指南","adPicUrl": "https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/卡片指南.jpeg" ,
+"innerPics":["https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/indexBanner/折扣卡使用指南.jpg"]}]

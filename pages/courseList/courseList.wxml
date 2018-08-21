@@ -1,0 +1,27 @@
+<progress class="progress" percent="{{progress}}" active="false"  stroke-width="4" />
+
+<view class="container">
+<view class="title">
+</view><!--title-->
+<view class="subjectList">
+<block wx:for="{{subjectPack}}" wx:key="*this" class="subject">
+<view class="subjectItem" >
+<view class="tapBind" data-pack="{{item}}" bindtap="openWord">
+ <image wx:if="{{item.fileType=='ppt'}}" class="wordPng" src="../../dist/image/docRelated/ppt.png"></image>
+ <image wx:if="{{item.fileType=='pdf'}}" class="wordPng" src="../../dist/image/docRelated/pdf.png"></image> 
+ <image wx:if="{{item.fileType=='doc'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image> 
+  <image wx:if="{{item.fileType=='docx'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image> 
+  <image wx:if="{{item.fileType=='txt'}}" class="wordPng" src="../../dist/image/docRelated/word.png"></image> 
+ <button  plain="true"  class="area" ></button> 
+<text class="titleText">{{item.wordTitle}}</text>
+<!-- <textarea disabled="true" show-confirm-bar="false" bindfocus="openWord" data-pack="{{item}}"  class="textarea"  value="{{item.wordTitle}}"/>  -->
+</view> 
+
+<image  bindtap="saveToLocal"  data-pack="{{item}}" class="downloadPng rotate" src="../../dist/image/docRelated/download.png"></image>
+<button class="shareBtn" plain="true" open-type="share" bindshare="onShareAppMessage">
+</button>
+<image  id="{{item.wordDir}}" class="downloadPng rotate" src="../../dist/image/docRelated/share.png"></image>
+</view><!--subjectItem--> 
+</block>
+</view><!--subjectList-->
+</view><!--container-->
